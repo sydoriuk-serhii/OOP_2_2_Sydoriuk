@@ -1,0 +1,15 @@
+D:\rider\projects\OOP_2_2_SS\OOP_2_2_SS\bin\Debug\net7.0\OOP_2_2_SS.exe
+D:\rider\projects\OOP_2_2_SS\OOP_2_2_SS\bin\Debug\net7.0\OOP_2_2_SS.deps.json
+D:\rider\projects\OOP_2_2_SS\OOP_2_2_SS\bin\Debug\net7.0\OOP_2_2_SS.runtimeconfig.json
+D:\rider\projects\OOP_2_2_SS\OOP_2_2_SS\bin\Debug\net7.0\OOP_2_2_SS.dll
+D:\rider\projects\OOP_2_2_SS\OOP_2_2_SS\bin\Debug\net7.0\OOP_2_2_SS.pdb
+D:\rider\projects\OOP_2_2_SS\OOP_2_2_SS\obj\Debug\net7.0\OOP_2_2_SS.csproj.AssemblyReference.cache
+D:\rider\projects\OOP_2_2_SS\OOP_2_2_SS\obj\Debug\net7.0\OOP_2_2_SS.GeneratedMSBuildEditorConfig.editorconfig
+D:\rider\projects\OOP_2_2_SS\OOP_2_2_SS\obj\Debug\net7.0\OOP_2_2_SS.AssemblyInfoInputs.cache
+D:\rider\projects\OOP_2_2_SS\OOP_2_2_SS\obj\Debug\net7.0\OOP_2_2_SS.AssemblyInfo.cs
+D:\rider\projects\OOP_2_2_SS\OOP_2_2_SS\obj\Debug\net7.0\OOP_2_2_SS.csproj.CoreCompileInputs.cache
+D:\rider\projects\OOP_2_2_SS\OOP_2_2_SS\obj\Debug\net7.0\OOP_2_2_SS.dll
+D:\rider\projects\OOP_2_2_SS\OOP_2_2_SS\obj\Debug\net7.0\refint\OOP_2_2_SS.dll
+D:\rider\projects\OOP_2_2_SS\OOP_2_2_SS\obj\Debug\net7.0\OOP_2_2_SS.pdb
+D:\rider\projects\OOP_2_2_SS\OOP_2_2_SS\obj\Debug\net7.0\OOP_2_2_SS.genruntimeconfig.cache
+D:\rider\projects\OOP_2_2_SS\OOP_2_2_SS\obj\Debug\net7.0\ref\OOP_2_2_SS.dll

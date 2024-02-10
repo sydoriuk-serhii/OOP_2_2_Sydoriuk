@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>Program_1.cs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #6c95eb;}
+.s1 { color: #d0d0d0;}
+.s2 { color: #bdbdbd;}
+.s3 { color: #c9a26d;}
+</style>
+</head>
+<body bgcolor="#262626">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Program_1.cs</font>
+</center></td></tr></table>
+<pre><span class="s0">public class </span><span class="s1">Program_1</span>
+<span class="s2">{</span>
+    <span class="s0">public </span><span class="s1">Program_1</span><span class="s2">()</span>
+    <span class="s2">{</span>
+        <span class="s1">Console</span><span class="s2">.</span><span class="s1">WriteLine</span><span class="s2">(</span><span class="s3">&quot;Введіть координати лівої верхньої точки прямокутника:&quot;</span><span class="s2">);</span>
+        <span class="s1">TPoint2D topLeft </span><span class="s2">= </span><span class="s1">ReadPoint</span><span class="s2">();</span>
+        <span class="s1">Console</span><span class="s2">.</span><span class="s1">WriteLine</span><span class="s2">(</span><span class="s3">&quot;Введіть координати правої нижньої точки прямокутника:&quot;</span><span class="s2">);</span>
+        <span class="s1">TPoint2D bottomRight </span><span class="s2">= </span><span class="s1">ReadPoint</span><span class="s2">();</span>
+
+        <span class="s1">TCRectangle rectangle </span><span class="s2">= </span><span class="s0">new </span><span class="s1">TCRectangle</span><span class="s2">(</span><span class="s1">topLeft</span><span class="s2">, </span><span class="s1">bottomRight</span><span class="s2">);</span>
+
+        <span class="s1">Console</span><span class="s2">.</span><span class="s1">WriteLine</span><span class="s2">(</span><span class="s3">&quot;Площа прямокутника: &quot; </span><span class="s2">+ </span><span class="s1">rectangle</span><span class="s2">.</span><span class="s1">Area</span><span class="s2">());</span>
+        <span class="s1">Console</span><span class="s2">.</span><span class="s1">WriteLine</span><span class="s2">(</span><span class="s3">&quot;Периметр прямокутника: &quot; </span><span class="s2">+ </span><span class="s1">rectangle</span><span class="s2">.</span><span class="s1">Perimeter</span><span class="s2">());</span>
+
+        <span class="s1">Console</span><span class="s2">.</span><span class="s1">WriteLine</span><span class="s2">(</span><span class="s3">&quot;Введiть координати точки для перевiрки:&quot;</span><span class="s2">);</span>
+        <span class="s1">TPoint2D point </span><span class="s2">= </span><span class="s1">ReadPoint</span><span class="s2">();</span>
+
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">rectangle</span><span class="s2">.</span><span class="s1">IsInside</span><span class="s2">(</span><span class="s1">point</span><span class="s2">))</span>
+        <span class="s2">{</span>
+            <span class="s1">Console</span><span class="s2">.</span><span class="s1">WriteLine</span><span class="s2">(</span><span class="s3">&quot;Точка лежить всерединi прямокутника.&quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+        <span class="s0">else</span>
+        <span class="s2">{</span>
+            <span class="s1">Console</span><span class="s2">.</span><span class="s1">WriteLine</span><span class="s2">(</span><span class="s3">&quot;Точка не лежить всерединi прямокутника.&quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s0">static </span><span class="s1">TPoint2D ReadPoint</span><span class="s2">()</span>
+    <span class="s2">{</span>
+        <span class="s0">double </span><span class="s1">x</span><span class="s2">, </span><span class="s1">y</span><span class="s2">;</span>
+        <span class="s1">Console</span><span class="s2">.</span><span class="s1">Write</span><span class="s2">(</span><span class="s3">&quot;X: &quot;</span><span class="s2">);</span>
+        <span class="s0">while </span><span class="s2">(</span><span class="s1">!</span><span class="s0">double</span><span class="s2">.</span><span class="s1">TryParse</span><span class="s2">(</span><span class="s1">Console</span><span class="s2">.</span><span class="s1">ReadLine</span><span class="s2">(), </span><span class="s0">out </span><span class="s1">x</span><span class="s2">))</span>
+        <span class="s2">{</span>
+            <span class="s1">Console</span><span class="s2">.</span><span class="s1">Write</span><span class="s2">(</span><span class="s3">&quot;Невiрний формат числа. Введiть X: &quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+        <span class="s1">Console</span><span class="s2">.</span><span class="s1">Write</span><span class="s2">(</span><span class="s3">&quot;Y: &quot;</span><span class="s2">);</span>
+        <span class="s0">while </span><span class="s2">(</span><span class="s1">!</span><span class="s0">double</span><span class="s2">.</span><span class="s1">TryParse</span><span class="s2">(</span><span class="s1">Console</span><span class="s2">.</span><span class="s1">ReadLine</span><span class="s2">(), </span><span class="s0">out </span><span class="s1">y</span><span class="s2">))</span>
+        <span class="s2">{</span>
+            <span class="s1">Console</span><span class="s2">.</span><span class="s1">Write</span><span class="s2">(</span><span class="s3">&quot;Невiрний формат числа. Введiть Y: &quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+        <span class="s0">return new </span><span class="s1">TPoint2D</span><span class="s2">(</span><span class="s1">x</span><span class="s2">, </span><span class="s1">y</span><span class="s2">);</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>

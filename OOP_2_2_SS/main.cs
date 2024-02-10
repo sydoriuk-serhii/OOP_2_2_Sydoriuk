@@ -1,0 +1,24 @@
+﻿class Program
+{
+    public static void Main(string[] args)
+    {
+        start:
+        int choise = 0;
+        choise = Convert.ToInt32(Console.ReadLine());
+        switch (choise)
+        {
+            case 1:
+               Program_1 lab_1 = new Program_1();
+                goto start;
+            case 2:
+               //  Lab_2_Trapezoid lab_2 = new Lab_2_Trapezoid();
+                goto start;
+            case 3:
+               // Lab_3_TMatrix lab_3 = new Lab_3_TMatrix(3);
+                goto start;
+            case 4:
+               // Lab_4_TSMatrix lab_4 = new Lab_4_TSMatrix('a');
+                goto start;
+        }
+    }
+}

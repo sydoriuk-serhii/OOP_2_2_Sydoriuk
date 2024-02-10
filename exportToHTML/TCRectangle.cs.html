@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>TCRectangle.cs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #6c95eb;}
+.s1 { color: #d0d0d0;}
+.s2 { color: #bdbdbd;}
+.s3 { color: #ed94c0;}
+</style>
+</head>
+<body bgcolor="#262626">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TCRectangle.cs</font>
+</center></td></tr></table>
+<pre><span class="s0">public class </span><span class="s1">TCRectangle</span>
+<span class="s2">{</span>
+    <span class="s0">private </span><span class="s1">TPoint2D _topLeft</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">TPoint2D _bottomRight</span><span class="s2">;</span>
+
+    <span class="s0">public </span><span class="s1">TCRectangle</span><span class="s2">()</span>
+    <span class="s2">{</span>
+        <span class="s1">_topLeft </span><span class="s2">= </span><span class="s0">new </span><span class="s1">TPoint2D</span><span class="s2">();</span>
+        <span class="s1">_bottomRight </span><span class="s2">= </span><span class="s0">new </span><span class="s1">TPoint2D</span><span class="s2">();</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">TCRectangle</span><span class="s2">(</span><span class="s1">TPoint2D topLeft</span><span class="s2">, </span><span class="s1">TPoint2D bottomRight</span><span class="s2">)</span>
+    <span class="s2">{</span>
+        <span class="s1">_topLeft </span><span class="s2">= </span><span class="s1">topLeft</span><span class="s2">;</span>
+        <span class="s1">_bottomRight </span><span class="s2">= </span><span class="s1">bottomRight</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">TPoint2D TopLeft</span>
+    <span class="s2">{</span>
+        <span class="s1">get =&gt; _topLeft</span><span class="s2">;</span>
+        <span class="s1">set =&gt; _topLeft </span><span class="s2">= </span><span class="s1">value</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public </span><span class="s1">TPoint2D BottomRight</span>
+    <span class="s2">{</span>
+        <span class="s1">get =&gt; _bottomRight</span><span class="s2">;</span>
+        <span class="s1">set =&gt; _bottomRight </span><span class="s2">= </span><span class="s1">value</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public double </span><span class="s1">Area</span><span class="s2">()</span>
+    <span class="s2">{</span>
+        <span class="s0">return </span><span class="s1">Math</span><span class="s2">.</span><span class="s1">Abs</span><span class="s2">((</span><span class="s1">_bottomRight</span><span class="s2">.</span><span class="s1">X </span><span class="s2">- </span><span class="s1">_topLeft</span><span class="s2">.</span><span class="s1">X</span><span class="s2">) * (</span><span class="s1">_bottomRight</span><span class="s2">.</span><span class="s1">Y </span><span class="s2">- </span><span class="s1">_topLeft</span><span class="s2">.</span><span class="s1">Y</span><span class="s2">));</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public double </span><span class="s1">Perimeter</span><span class="s2">()</span>
+    <span class="s2">{</span>
+        <span class="s0">return </span><span class="s3">2 </span><span class="s2">* (</span><span class="s1">_bottomRight</span><span class="s2">.</span><span class="s1">X </span><span class="s2">- </span><span class="s1">_topLeft</span><span class="s2">.</span><span class="s1">X </span><span class="s2">+ </span><span class="s1">_topLeft</span><span class="s2">.</span><span class="s1">Y </span><span class="s2">- </span><span class="s1">_bottomRight</span><span class="s2">.</span><span class="s1">Y</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s0">public bool </span><span class="s1">IsInside</span><span class="s2">(</span><span class="s1">TPoint2D point</span><span class="s2">)</span>
+    <span class="s2">{</span>
+        <span class="s0">return </span><span class="s1">point</span><span class="s2">.</span><span class="s1">X </span><span class="s2">&gt;= </span><span class="s1">_topLeft</span><span class="s2">.</span><span class="s1">X </span><span class="s2">&amp;&amp; </span><span class="s1">point</span><span class="s2">.</span><span class="s1">X </span><span class="s2">&lt;= </span><span class="s1">_bottomRight</span><span class="s2">.</span><span class="s1">X </span><span class="s2">&amp;&amp;</span>
+               <span class="s1">point</span><span class="s2">.</span><span class="s1">Y </span><span class="s2">&lt;= </span><span class="s1">_topLeft</span><span class="s2">.</span><span class="s1">Y </span><span class="s2">&amp;&amp; </span><span class="s1">point</span><span class="s2">.</span><span class="s1">Y </span><span class="s2">&gt;= </span><span class="s1">_bottomRight</span><span class="s2">.</span><span class="s1">Y</span><span class="s2">;</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>
