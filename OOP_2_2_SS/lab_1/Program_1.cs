@@ -2,6 +2,7 @@
 {
     public Program_1()
     {
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
         Console.WriteLine("Введіть координати лівої верхньої точки прямокутника:");
         TPoint2D topLeft = ReadPoint();
         Console.WriteLine("Введіть координати правої нижньої точки прямокутника:");

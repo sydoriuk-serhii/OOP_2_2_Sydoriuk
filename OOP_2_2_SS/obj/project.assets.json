@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\V1t4im\\.nuget\\packages\\": {}
+    "C:\\Users\\liser\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\rider\\projects\\OOP_2_2_SS\\OOP_2_2_SS\\OOP_2_2_SS.csproj",
+      "projectUniqueName": "C:\\Users\\liser\\RiderProjects\\OOP_2_2_Sydoriuk\\OOP_2_2_SS\\OOP_2_2_SS.csproj",
       "projectName": "OOP_2_2_SS",
-      "projectPath": "D:\\rider\\projects\\OOP_2_2_SS\\OOP_2_2_SS\\OOP_2_2_SS.csproj",
-      "packagesPath": "C:\\Users\\V1t4im\\.nuget\\packages\\",
-      "outputPath": "D:\\rider\\projects\\OOP_2_2_SS\\OOP_2_2_SS\\obj\\",
+      "projectPath": "C:\\Users\\liser\\RiderProjects\\OOP_2_2_Sydoriuk\\OOP_2_2_SS\\OOP_2_2_SS.csproj",
+      "packagesPath": "C:\\Users\\liser\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\liser\\RiderProjects\\OOP_2_2_Sydoriuk\\OOP_2_2_SS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\V1t4im\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\liser\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -54,12 +54,30 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[7.0.14, 7.0.14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[7.0.14, 7.0.14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[7.0.14, 7.0.14]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[7.0.14, 7.0.14]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\V1t4im\\.dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\liser\\.dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

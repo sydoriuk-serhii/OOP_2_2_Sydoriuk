@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "1MRMrJERXQ2oV5SirY2pcB8Qyo65oYJvGDugJYIPUthIOnnTHTxEDKDtHjqw+fUWaoPwrnCueVOXWWnmBdPprQ==",
+  "dgSpecHash": "cXJMpBgw8cvSVWkA/dsVqygum+jm6wpEAFuIG0eHhfZ+W97+J0vic0qJvASFJRFC1+4xogVYYuFEAAMtjdf6hg==",
   "success": true,
-  "projectFilePath": "D:\\rider\\projects\\OOP_2_2_SS\\OOP_2_2_SS\\OOP_2_2_SS.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\liser\\RiderProjects\\OOP_2_2_Sydoriuk\\OOP_2_2_SS\\OOP_2_2_SS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\liser\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\liser\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\liser\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\liser\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.14\\microsoft.netcore.app.host.win-x64.7.0.14.nupkg.sha512"
+  ],
   "logs": []
 }

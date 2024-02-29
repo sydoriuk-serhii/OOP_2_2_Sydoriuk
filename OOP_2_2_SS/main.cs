@@ -11,7 +11,7 @@
                Program_1 lab_1 = new Program_1();
                 goto start;
             case 2:
-               //  Lab_2_Trapezoid lab_2 = new Lab_2_Trapezoid();//
+                Program_2 lab_2 = new Program_2();
                 goto start;
             case 3:
                // Lab_3_TMatrix lab_3 = new Lab_3_TMatrix(3);
