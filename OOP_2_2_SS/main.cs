@@ -14,7 +14,7 @@
                 Program_2 lab_2 = new Program_2();
                 goto start;
             case 3:
-               // Lab_3_TMatrix lab_3 = new Lab_3_TMatrix(3);
+                Program_3 lab_3 = new Program_3();
                 goto start;
             case 4:
                // Lab_4_TSMatrix lab_4 = new Lab_4_TSMatrix('a');
