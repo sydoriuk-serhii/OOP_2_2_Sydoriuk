@@ -27,6 +27,7 @@ class VowelConsonantCounter
         }
     }
 
+    
     public VowelConsonantCounter()
     {
         string text =

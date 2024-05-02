@@ -6,4 +6,5 @@ public class Program_4
     {
         VowelConsonantCounter VowelConsonantCounter = new VowelConsonantCounter();
     }
+    
 }
