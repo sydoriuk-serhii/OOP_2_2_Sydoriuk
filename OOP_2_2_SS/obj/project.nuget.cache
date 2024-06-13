@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "cXJMpBgw8cvSVWkA/dsVqygum+jm6wpEAFuIG0eHhfZ+W97+J0vic0qJvASFJRFC1+4xogVYYuFEAAMtjdf6hg==",
+  "dgSpecHash": "0bNb7M56GtUXoEs87sueybh87l/4r9LGJC6YjRFMQfgFF/s96XHKCHkiyup2/erVXdwNKz/JFMHh22SfuCEKBQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\liser\\RiderProjects\\OOP_2_2_Sydoriuk\\OOP_2_2_SS\\OOP_2_2_SS.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\liser\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
-    "C:\\Users\\liser\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
-    "C:\\Users\\liser\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512",
-    "C:\\Users\\liser\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.14\\microsoft.netcore.app.host.win-x64.7.0.14.nupkg.sha512"
+    "C:\\Users\\liser\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.19\\microsoft.netcore.app.ref.7.0.19.nupkg.sha512",
+    "C:\\Users\\liser\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.19\\microsoft.windowsdesktop.app.ref.7.0.19.nupkg.sha512",
+    "C:\\Users\\liser\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.19\\microsoft.aspnetcore.app.ref.7.0.19.nupkg.sha512",
+    "C:\\Users\\liser\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.19\\microsoft.netcore.app.host.win-x64.7.0.19.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,45 +1,44 @@
-﻿public class TCRectangle
+﻿using System;
+
+public class TCRectangle : TPoint2D
 {
-    private TPoint2D _topLeft;
-    private TPoint2D _bottomRight;
-
-    public TCRectangle()
+    public TPoint2D Point1 { get; set; }
+    public TPoint2D Point2 { get; set; }
+    public TPoint2D Point3 { get; set; }
+    public TPoint2D Point4 { get; set; }
+    
+    public TCRectangle(TPoint2D p1, TPoint2D p2, TPoint2D p3, TPoint2D p4)
     {
-        _topLeft = new TPoint2D();
-        _bottomRight = new TPoint2D();
+        Point1 = p1;
+        Point2 = p2;
+        Point3 = p3;
+        Point4 = p4;
     }
 
-    public TCRectangle(TPoint2D topLeft, TPoint2D bottomRight)
-    {
-        _topLeft = topLeft;
-        _bottomRight = bottomRight;
-    }
-
-    public TPoint2D TopLeft
-    {
-        get => _topLeft;
-        set => _topLeft = value;
-    }
-
-    public TPoint2D BottomRight
-    {
-        get => _bottomRight;
-        set => _bottomRight = value;
-    }
-
+    // Метод для знаходження площі
     public double Area()
     {
-        return Math.Abs((_bottomRight.X - _topLeft.X) * (_bottomRight.Y - _topLeft.Y));
+        double width = Point1.DistanceTo(Point2);
+        double height = Point2.DistanceTo(Point3);
+        return width * height;
     }
 
+    // Метод для знаходження периметру
     public double Perimeter()
     {
-        return 2 * (_bottomRight.X - _topLeft.X + _topLeft.Y - _bottomRight.Y);
+        double width = Point1.DistanceTo(Point2);
+        double height = Point2.DistanceTo(Point3);
+        return 2 * (width + height);
     }
 
-    public bool IsInside(TPoint2D point)
+    // Метод для визначення того, чи лежить вказана точка всередині прямокутника
+    public bool IsPointInside(TPoint2D point)
     {
-        return point.X >= _topLeft.X && point.X <= _bottomRight.X &&
-               point.Y <= _topLeft.Y && point.Y >= _bottomRight.Y;
+        double minX = Math.Min(Point1.X, Math.Min(Point2.X, Math.Min(Point3.X, Point4.X)));
+        double maxX = Math.Max(Point1.X, Math.Max(Point2.X, Math.Max(Point3.X, Point4.X)));
+        double minY = Math.Min(Point1.Y, Math.Min(Point2.Y, Math.Min(Point3.Y, Point4.Y)));
+        double maxY = Math.Max(Point1.Y, Math.Max(Point2.Y, Math.Max(Point3.Y, Point4.Y)));
+
+        return (point.X >= minX && point.X <= maxX && point.Y >= minY && point.Y <= maxY);
     }
 }

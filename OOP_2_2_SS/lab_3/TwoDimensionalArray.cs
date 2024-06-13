@@ -1,21 +1,84 @@
 ﻿using OOP_2_2_SS.lab_3;
-public class TwoDimensionalArray : ArraySumMinMax
-{
-    private readonly int[,] _array;
 
-    public TwoDimensionalArray(int[,] array)
+
+public class TwoDimensionalArray
+{
+    private int[,] array;
+    private int rows;
+    private int[] cols;
+
+    public TwoDimensionalArray()
     {
-        _array = array;
+        array = new int[0, 0];
+        rows = 0;
+        cols = new int[0];
     }
 
+
+    public void AddRow()
+    {
+        int[,] newArray = new int[rows + 1, (cols.Length > 0) ? cols[0] : 0];
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols[i]; j++)
+            {
+                newArray[i, j] = array[i, j];
+            }
+        }
+
+        array = newArray;
+
+        Array.Resize(ref cols, rows + 1);
+        cols[rows] = (cols.Length > 1) ? cols[0] : 0;
+        rows++;
+    }
+
+    public void AddElement(int row, int col, int element)
+    {
+        if (row >= rows)
+        {
+            Console.WriteLine("Рядок не існує.");
+            return;
+        }
+
+        if (col >= cols[row])
+        {
+            int[,] newArray = new int[rows, Math.Max(col + 1, cols[row])];
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols[i]; j++)
+                {
+                    newArray[i, j] = array[i, j];
+                }
+            }
+
+            array = newArray;
+            cols[row] = col + 1;
+        }
+
+        array[row, col] = element;
+    }
+
+    public void PrintArray()
+    {
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols[i]; j++)
+            {
+                Console.Write(array[i, j] + " ");
+            }
+
+            Console.WriteLine();
+        }
+    }
     public int Sum()
     {
         int sum = 0;
-        for (int i = 0; i < _array.GetLength(0); i++)
+        for (int i = 0; i < rows; i++)
         {
-            for (int j = 0; j < _array.GetLength(1); j++)
+            for (int j = 0; j < cols[i]; j++)
             {
-                sum += _array[i, j];
+                sum += array[i, j];
             }
         }
         return sum;
@@ -23,14 +86,16 @@ public class TwoDimensionalArray : ArraySumMinMax
 
     public int Max()
     {
-        int max = int.MinValue;
-        for (int i = 0; i < _array.GetLength(0); i++)
+        if (rows == 0) return int.MinValue;
+
+        int max = array[0, 0];
+        for (int i = 0; i < rows; i++)
         {
-            for (int j = 0; j < _array.GetLength(1); j++)
+            for (int j = 0; j < cols[i]; j++)
             {
-                if (_array[i, j] > max)
+                if (array[i, j] > max)
                 {
-                    max = _array[i, j];
+                    max = array[i, j];
                 }
             }
         }
@@ -39,14 +104,16 @@ public class TwoDimensionalArray : ArraySumMinMax
 
     public int Min()
     {
-        int min = int.MaxValue;
-        for (int i = 0; i < _array.GetLength(0); i++)
+        if (rows == 0) return int.MaxValue;
+
+        int min = array[0, 0];
+        for (int i = 0; i < rows; i++)
         {
-            for (int j = 0; j < _array.GetLength(1); j++)
+            for (int j = 0; j < cols[i]; j++)
             {
-                if (_array[i, j] < min)
+                if (array[i, j] < min)
                 {
-                    min = _array[i, j];
+                    min = array[i, j];
                 }
             }
         }

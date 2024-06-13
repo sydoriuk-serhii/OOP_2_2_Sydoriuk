@@ -6,45 +6,38 @@ using System.Collections.Generic;
 
 class VowelConsonantCounter
 {
-    static void CountVowelsAndConsonantsText(char[] chars)
-    {
-        int vowels = 0, consonants = 0, otherChars = 0;
-
-        foreach (char c in chars)
-        {
-            if (IsVowel(c))
-            {
-                vowels++;
-            }
-            else if (IsConsonant(c))
-            {
-                consonants++;
-            }
-            else
-            {
-                otherChars++;
-            }
-        }
-    }
-
-    
     public VowelConsonantCounter()
     {
-        string text =
-            File.ReadAllText(
-                "C:\\\\Users\\\\liser\\\\RiderProjects\\\\OOP_2_2_Sydoriuk\\\\OOP_2_2_SS\\\\Lab_4\\\\text.txt");
+        Console.OutputEncoding = System.Text.Encoding.UTF8; 
+        start:
+        string filePath = "C:\\Users\\liser\\RiderProjects\\OOP_2_2_Sydoriuk\\OOP_2_2_SS\\Lab_4\\text.txt";
+        string text = File.ReadAllText(filePath);
+        
+        char[] charArray = text.ToCharArray();
+        List<char> charList = new List<char>(charArray);
+        
+        Console.WriteLine("Виберіть метод перевірки:");
+        Console.WriteLine("1. Перевірити кількість символів за допомогою масиву");
+        Console.WriteLine("2. Перевірити кількість символів за допомогою списку");
+        int choice = ReadInteger();
 
-        List<char> chars = new List<char>(text.ToCharArray());
-        char[] charstext = text.ToCharArray();
-        var results = CountVowelsAndConsonants(chars);
-        Console.WriteLine("Vowels: " + results.Vowels);
-        Console.WriteLine("Consonants: " + results.Consonants);
-        Console.WriteLine("OtherChars: " + results.OtherChars);
+        switch (choice)
+        {
+            case 1:
+                CountVowelsAndConsonantsArray(charArray);
+                goto start;
+            case 2:
+                CountVowelsAndConsonantsList(charList);
+                goto start;
+            default:
+                Console.Write("Невiрний варіант рішення. Введiть '1' або '2': ");
+                goto start;
+        }
     }
 
-    public (int Vowels, int Consonants, int OtherChars) CountVowelsAndConsonants(List<char> chars)
+    static void CountVowelsAndConsonantsArray(char[] chars)
     {
-        int vowels = 0, consonants = 0, otherChars = 0;
+        int vowels = 0, consonants = 0;
 
         foreach (char c in chars)
         {
@@ -56,13 +49,28 @@ class VowelConsonantCounter
             {
                 consonants++;
             }
-            else
+        }
+        Console.WriteLine("Голосні: " + vowels);
+        Console.WriteLine("Приголосні: " + consonants);
+    }
+
+    static void CountVowelsAndConsonantsList(List<char> chars)
+    {
+        int vowels = 0, consonants = 0;
+
+        foreach (char c in chars)
+        {
+            if (IsVowel(c))
             {
-                otherChars++;
+                vowels++;
+            }
+            else if (IsConsonant(c))
+            {
+                consonants++;
             }
         }
-
-        return (vowels, consonants, otherChars);
+        Console.WriteLine("Голосні: " + vowels);
+        Console.WriteLine("Приголосні: " + consonants);
     }
 
     static bool IsVowel(char c)
@@ -73,5 +81,14 @@ class VowelConsonantCounter
     static bool IsConsonant(char c)
     {
         return char.IsLetter(c) && !IsVowel(c);
+    }
+    static int ReadInteger()
+    {
+        int x;
+        while (!int.TryParse(Console.ReadLine(), out x))
+        {
+            Console.Write("Невiрний формат числа. Введiть integer: ");
+        }
+        return x;
     }
 }

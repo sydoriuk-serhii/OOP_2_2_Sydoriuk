@@ -4,26 +4,35 @@
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
         Console.WriteLine("Введіть завдання:");
-        int n = int.Parse(Console.ReadLine());
-        if (n == 1)
-        {
-            func_1();
-            func_2();
-            func_3();
+        int n = ReadInteger();
+        switch(n) {
+            case 1:
+                func_1();
+                break;
+            case 2:
+                func_2();
+                break;
+            case 3:
+                func_3();
+                break;
+            case 4:
+                func_4();
+                break;
+            case 5:
+                func_5();
+                break;
+            case 6:
+                func_6();
+                break;
         }
-        else
-        {
-            func_4();
-            func_5();
-            func_6();
-        }
+        Program_2 nextLab = new Program_2();
     }
 
     public void func_1()
     {
         Console.WriteLine("1.1\n" +
                           "Введіть кількість чисел:");
-        int nums = int.Parse(Console.ReadLine());
+        int nums = ReadInteger();
 
         double[] numbers = new double[nums];
         double maxNegative = double.MinValue;
@@ -31,7 +40,7 @@
         for (int i = 0; i < nums; i++)
         {
             Console.WriteLine($"Введіть {i + 1}-е число:");
-            numbers[i] = double.Parse(Console.ReadLine());
+            numbers[i] = ReadDouble();
             if (numbers[i] < 0 && numbers[i] > maxNegative)
             {
                 maxNegative = numbers[i];
@@ -52,7 +61,7 @@
     {
         Console.WriteLine("1.2\n" +
                           "Введіть розмірність векторів:");
-        int n = int.Parse(Console.ReadLine()); // Розмірність векторів
+        int n = ReadInteger(); // Розмірність векторів
         double[] x; // Координати вектора x
         double[] y; // Координати вектора y
         double dotProduct; // Скалярний добуток векторів
@@ -64,13 +73,13 @@
         Console.WriteLine("Введіть координати вектора x:");
         for (int i = 0; i < n; i++)
         {
-            x[i] = double.Parse(Console.ReadLine());
+            x[i] = ReadDouble();
         }
 
         Console.WriteLine("Введіть координати вектора y:");
         for (int i = 0; i < n; i++)
         {
-            y[i] = double.Parse(Console.ReadLine());
+            y[i] = ReadDouble();
         }
 
         //Розрахунок скалярного добутку:
@@ -98,19 +107,19 @@
     {
         Console.WriteLine("1.3\n" +
                           "Введіть розмір масиву:");
-        int n = int.Parse(Console.ReadLine());
+        int n = ReadInteger();
         double[] array = new double[n];
         double a, b;
         for (int i = 0; i < n; i++)
         {
             Console.WriteLine($"Введіть {i + 1}-е число:");
-            array[i] = double.Parse(Console.ReadLine());
+            array[i] = ReadDouble();
         }
 
         Console.WriteLine("Введіть A:");
-        a = double.Parse(Console.ReadLine());
+        a = ReadDouble();
         Console.WriteLine("Введіть B:");
-        b = double.Parse(Console.ReadLine());
+        b = ReadDouble();
 
         void SqueezeArray(double[] arr, double a, double b)
         {
@@ -141,15 +150,15 @@
     public void func_4()
     {
         Console.WriteLine("2.1\n" +
-                          "Введіть розмірність матриці:");
-        int n = int.Parse(Console.ReadLine());
+                          "Введіть розмір:");
+        int n = ReadInteger();
         int[,] matrix = new int[n, n];
         Console.WriteLine("Введіть усі елементи матриці:");
         for (int i = 0; i < n; i++)
         {
             for (int j = 0; j < n; j++)
             {
-                matrix[i, j] = int.Parse(Console.ReadLine());
+                matrix[i, j] = ReadInteger();
             }
         }
 
@@ -185,7 +194,7 @@
     {
         Console.WriteLine("2.2\n" +
                           "Введіть розмірність матриці:");
-        int n = int.Parse(Console.ReadLine()); // Розмірність матриці
+        int n = ReadInteger(); // Розмірність матриці
         int[,] matrix = new int[n, n];
         Random random = new Random();
         for (int i = 0; i < n; i++)
@@ -237,7 +246,7 @@
     {
         Console.WriteLine("2.3\n" +
                           "Введіть розмірність матриці:");
-        int n = int.Parse(Console.ReadLine()); // Розмірність матриці
+        int n = ReadInteger(); // Розмірність матриці
         // Створення та заповнення матриці випадковими числами
         int[,] matrix = new int[n, n];
         Random random = new Random();
@@ -248,6 +257,7 @@
                 matrix[i, j] = random.Next(-10, 10);
             }
         }
+
         // Виведення матриці
         Console.WriteLine("Матриця:");
         for (int i = 0; i < n; i++)
@@ -259,7 +269,8 @@
 
             Console.WriteLine();
         }
-        // Знаходження мінімальної суми модулів елементів діагоналей
+
+        // Знаходження мінімального модуля суми елементів побічних діагоналей
         int minSum = int.MaxValue;
         for (int k = 0; k < n; k++)
         {
@@ -271,7 +282,27 @@
 
             minSum = Math.Min(minSum, sum);
         }
+
         // Виведення результату
         Console.WriteLine("Мінімальна сума модулів елементів діагоналей: {0}", minSum);
+    }
+
+    static int ReadInteger()
+    {
+        int x;
+        while (!int.TryParse(Console.ReadLine(), out x))
+        {
+            Console.Write("Невiрний формат числа. Введiть integer: ");
+        }
+        return x;
+    }
+    static double ReadDouble()
+    {
+        double x;
+        while (!double.TryParse(Console.ReadLine(), out x))
+        {
+            Console.Write("Невiрний формат числа. Введiть Double: ");
+        }
+        return x;
     }
 }

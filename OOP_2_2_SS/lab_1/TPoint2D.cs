@@ -1,85 +1,82 @@
-﻿public class TPoint2D
-{
-    private double _x;
-    private double _y;
+﻿using System;
 
+public class TPoint2D
+{
+    public double X { get; set; }
+    public double Y { get; set; }
+
+    // Конструктор без параметрів
     public TPoint2D()
     {
-        _x = 0;
-        _y = 0;
+        X = 0;
+        Y = 0;
     }
 
+    // Конструктор з параметрами
     public TPoint2D(double x, double y)
     {
-        _x = x;
-        _y = y;
+        X = x;
+        Y = y;
     }
 
+    // Конструктор копіювання
     public TPoint2D(TPoint2D point)
     {
-        _x = point._x;
-        _y = point._y;
+        X = point.X;
+        Y = point.Y;
     }
 
-    public double X
-    {
-        get => _x;
-        set => _x = value;
-    }
-
-    public double Y
-    {
-        get => _y;
-        set => _y = value;
-    }
-
+    // Введення даних
     public void Input()
     {
         Console.Write("Введіть координату X: ");
-        _x = double.Parse(Console.ReadLine());
+        X = Convert.ToDouble(Console.ReadLine());
         Console.Write("Введіть координату Y: ");
-        _y = double.Parse(Console.ReadLine());
+        Y = Convert.ToDouble(Console.ReadLine());
     }
 
+    // Виведення даних
     public void Output()
     {
-        Console.WriteLine($"({X}, {Y})");
+        Console.WriteLine($"Точка: ({X}, {Y})");
     }
 
+    // Визначення відстані до іншої точки
     public double DistanceTo(TPoint2D point)
     {
-        return Math.Sqrt(Math.Pow(point.X - _x, 2) + Math.Pow(point.Y - _y, 2));
+        return Math.Sqrt(Math.Pow(X - point.X, 2) + Math.Pow(Y - point.Y, 2));
     }
 
-    public int Quadrant()
+    // Визначення квадранту
+    public int GetQuadrant()
     {
-        if (_x > 0 && _y > 0)
+        if (X > 0 && Y > 0)
             return 1;
-        else if (_x < 0 && _y > 0)
+        else if (X < 0 && Y > 0)
             return 2;
-        else if (_x < 0 && _y < 0)
+        else if (X < 0 && Y < 0)
             return 3;
-        else
+        else if (X > 0 && Y < 0)
             return 4;
+        else
+            return 0; // Точка на осі
     }
 
-    public static bool operator ==(TPoint2D point1, TPoint2D point2)
+    // Порівняння з іншою точкою
+    public bool IsEqual(TPoint2D point)
     {
-        return point1.X == point2.X && point1.Y == point2.Y;
+        return X == point.X && Y == point.Y;
     }
 
-    public static bool operator !=(TPoint2D point1, TPoint2D point2)
+    // Перевантаження оператора +
+    public static TPoint2D operator +(TPoint2D p1, TPoint2D p2)
     {
-        return !(point1 == point2);
+        return new TPoint2D(p1.X + p2.X, p1.Y + p2.Y);
     }
 
-    public static TPoint2D operator +(TPoint2D point1, TPoint2D point2)
+    // Перевантаження оператора -
+    public static TPoint2D operator -(TPoint2D p1, TPoint2D p2)
     {
-        return new TPoint2D(point1.X + point2.X, point1.Y + point2.Y);
-    }
-
-    public static TPoint2D operator -(TPoint2D point1, TPoint2D point2)
-    {
-        return new TPoint2D(point1.X - point2.X, point1.Y - point2.Y);
+        return new TPoint2D(p1.X - p2.X, p1.Y - p2.Y);
     }
 }

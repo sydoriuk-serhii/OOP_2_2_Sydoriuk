@@ -1,4 +1,6 @@
-﻿class Program
+﻿using OOP_2_2_SS.Lab_4;
+
+class Program
 {
     public static void Main(string[] args)
     {
@@ -17,7 +19,7 @@
                 Program_3 lab_3 = new Program_3();
                 goto start;
             case 4:
-               // Lab_4_TSMatrix lab_4 = new Lab_4_TSMatrix('a');
+                Program_4 lab_4 = new Program_4();
                 goto start;
         }
     }

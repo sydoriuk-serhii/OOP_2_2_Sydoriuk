@@ -2,12 +2,36 @@
 
 public class OneDimensionalArray : ArraySumMinMax
 {
-    private readonly int[] _array;
+    private int[] _array;
 
-    public OneDimensionalArray(int[] array)
+    public OneDimensionalArray()
     {
-        _array = array;
+        _array = new int[0];
     }
+
+    public void AddElement(int element)
+    {
+        int[] newArray = new int[_array.Length + 1];
+
+        Array.Copy(_array, newArray, _array.Length);
+
+        newArray[_array.Length] = element;
+
+        _array = newArray;
+    }
+    public int LastElement()
+    {
+        if (_array.Length == 0)
+        {
+            Console.WriteLine("Масив пустий.");
+            return 1;
+        }
+        else
+        {
+            return _array[_array.Length - 1];
+        }
+    }
+
 
     public int Sum()
     {
@@ -16,6 +40,7 @@ public class OneDimensionalArray : ArraySumMinMax
         {
             sum += element;
         }
+
         return sum;
     }
 
@@ -29,6 +54,7 @@ public class OneDimensionalArray : ArraySumMinMax
                 max = element;
             }
         }
+
         return max;
     }
 
@@ -42,6 +68,7 @@ public class OneDimensionalArray : ArraySumMinMax
                 min = element;
             }
         }
+
         return min;
     }
 }
